@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 import {
   Head,
@@ -9,9 +9,8 @@ import {
   TextWrapper,
   Text,
   Nav,
-  Link,
-  About
-} from './Header.styled';
+  Link
+} from './Header.styled'
 
 const Header = () => (
   <>
@@ -42,13 +41,7 @@ const Header = () => (
       <Link href='#/gallery'>Галерея</Link>
       <Link href='#/contacts'>Контакти</Link>
     </Nav>
-    <About>
-      <p>Офіційна сторінка</p>
-      <p>Обслуговуючого кооперативу</p>
-      <p>«САДИ ВЕТЕРАНІВ АТО»</p>
-      <button>Детальніше</button>
-    </About>
   </>
-);
+)
 
-export default Header;
+export default Header
