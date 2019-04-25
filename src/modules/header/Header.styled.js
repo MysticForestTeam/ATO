@@ -3,7 +3,7 @@ import styled from 'styled-components'
 const headHeight = '70px'
 
 export const Head = styled.div`
-  width: 100vw;
+  width: 100%;
   height: ${headHeight};
   background-color: #30372f;
   display: flex;
@@ -58,7 +58,7 @@ export const Text = styled.p`
 `
 
 export const Nav = styled.div`
-  width: 100vw;
+  width: 100%;
   height: 50px;
   background-color: #bf9f62;
   display: flex;
