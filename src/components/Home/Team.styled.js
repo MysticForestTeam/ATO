@@ -30,13 +30,16 @@ export const Avatar = styled.div`
   height: 100px;
   width: 100px;
   border-radius: 50px;
-  background: #f4f4f4 url(${props => props.src});
+  background: #f4f4f4 url(${props => props.src}) center center;
+  background-size: cover;
 `
 
 export const Name = styled.h1`
   color: #c5a460;
   font-family: 'Roboto', sans-serif;
   font-size: 1.3em;
+  margin-top: 10px;
+  margin-bottom: 10px;
 `
 
 export const Text = styled.p`
@@ -45,4 +48,6 @@ export const Text = styled.p`
   font-size: ${props => (props.primary ? '1.1em' : '1em')};
   text-align: center;
   max-width: 80%;
+  margin-top: 10px;
+  margin-bottom: 10px;
 `

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Carousel from './Carousel'
+import Carousel from '../../containers/Home/Carousel'
 
 import Button from '../../modules/primary-button/Button'
 
@@ -31,7 +31,11 @@ const Gallery = () => (
           было, как по жести подоконника стучат капли дождя – привела его и
           вовсе в грустное настроение.
         </Text>
-        <Carousel images={Images} delay={5000} />
+        <Carousel 
+          images={Images} 
+          delay={5000}
+          workedLink='/'
+        />
         <Button text='Перейти' link url='/gallery' />
       </CarouselBlock>
       <Image src={Images[0]} />

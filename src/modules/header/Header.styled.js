@@ -67,14 +67,17 @@ export const Nav = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  a {
+    text-decoration: none;
+  }
 `;
 
-export const Link = styled.a`
+export const Link = styled.p`
   font-size: 1em;
   color: #ffffff;
   padding: 0 2.4em;
   display: block;
-  text-decoration: none;
   font-family: 'Roboto Slab', serif;
   font-weight: 400;
 `;

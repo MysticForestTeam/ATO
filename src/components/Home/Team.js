@@ -13,7 +13,7 @@ const Team = () => (
   <Wrapper>
     <ContentWrapper>
       <PersonCard>
-        <Avatar />
+        <Avatar src='../../img/avatar.png'/>
         <Name>Андрій Наконечний</Name>
         <Text primary>Замісник</Text>
         <Text>
@@ -22,7 +22,7 @@ const Team = () => (
         </Text>
       </PersonCard>
       <PersonCard>
-        <Avatar />
+        <Avatar src='../../img/avatar.png'/>
         <Name>Андрій Наконечний</Name>
         <Text primary>Замісник</Text>
         <Text>
@@ -31,7 +31,7 @@ const Team = () => (
         </Text>
       </PersonCard>
       <PersonCard>
-        <Avatar />
+        <Avatar src='../../img/avatar.png'/>
         <Name>Андрій Наконечний</Name>
         <Text primary>Замісник</Text>
         <Text>

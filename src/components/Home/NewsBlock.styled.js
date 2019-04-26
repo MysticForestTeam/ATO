@@ -50,6 +50,10 @@ export const NewsWrapper = styled.div`
   grid-template-rows: 400px;
   grid-template-columns: repeat(3, 330px);
   grid-gap: 15px;
+
+  @media(max-width: 1100px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 `
 
 const NewsCardPosed = posed.div({

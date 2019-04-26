@@ -8,6 +8,10 @@ export const Wrapper = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
+
+  @media(max-width: 1100px) {
+    height: 1100px;
+  }
 `
 
 export const ContentWrapper = styled.div`
@@ -16,6 +20,15 @@ export const ContentWrapper = styled.div`
   height: 100%;
   display: flex;
   align-items: center;
+
+  @media(max-width: 1100px) {
+    height: 1200px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
 `
 
 export const CarouselBlock = styled.div`

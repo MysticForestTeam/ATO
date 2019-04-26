@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, HashRouter, Route, Switch } from 'react-router-dom';
 
 import Home from './pages/Home';
 import News from './pages/News';
@@ -12,7 +12,7 @@ import './css/normalize.css';
 class App extends React.Component {
   render() {
     return (
-      <HashRouter>
+      <BrowserRouter>
         <Switch>
           <Route exact path='/' component={Home} />
           <Route exact path='/news' render={props => <News {...props} />} />
@@ -20,7 +20,7 @@ class App extends React.Component {
           <Route path='/gallery' component={Gallery} />
           <Route path='/contacts' component={Contacts} />
         </Switch>
-      </HashRouter>
+      </BrowserRouter>
     );
   }
 }

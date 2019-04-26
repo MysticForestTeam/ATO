@@ -1,5 +1,6 @@
 import React from 'react'
 import { Map, List } from 'immutable'
+import PropTypes from 'prop-types'
 
 import {
   Wrapper,
@@ -18,31 +19,50 @@ class Carousel extends React.Component {
       activeDots: [],
       translateX: 0,
       activeSlide: 0,
-      animates: false
+      animates: false,
+      url: '',
     }
 
     this.moveImages = this.moveImages.bind(this)
     this.autoToggle = this.autoToggle.bind(this)
+    this.getUrl = this.getUrl.bind(this)
+  }
+
+  getUrl = () => {
+    let url = window.location.pathname
+    this.setState({url: window.location.pathname})
   }
 
   componentWillMount() {
-    console.log(this.state.activeDots)
-    this.setState({ images: [...this.props.images, this.props.images[0]] })
-    this.setState({
-      activeDots: List.of(
-        ...this.props.images.map((image, index) => ({
-          id: index,
-          state: index === 0 ? true : false
-        }))
-      ).toJS()
-    })
+    this.getUrl()
+    window.setTimeout(() => {
+      if (this.state.url === this.props.workedLink) {
+        this.setState({ images: [...this.props.images, this.props.images[0]] })
+        this.setState({
+          activeDots: List.of(
+            ...this.props.images.map((image, index) => ({
+              id: index,
+              state: index === 0 ? true : false
+            }))
+            ).toJS()
+          })
+        }
+    }, 50)
   }
-
+    
   componentDidMount() {
-    this.autoToggle()
+    console.log(this.state.url)
+    this.getUrl()
+    window.setTimeout(() => {
+      if (this.state.url === this.props.workedLink) {
+        this.autoToggle()
+      }
+    }, 50)
   }
 
   moveImages = index => {
+    this.getUrl()
+
     this.setState({
       translateX:
         this.state.translateX +
@@ -71,9 +91,13 @@ class Carousel extends React.Component {
   autoToggle = () => {
     this.moveImages(this.state.activeSlide + 1)
 
-    window.setTimeout(() => {
-      this.autoToggle(this.state.activeSlide + 1)
-    }, this.props.delay)
+    console.log(this.props.allow)
+
+    if (this.props.allow) {
+      window.setTimeout(() => {
+        this.autoToggle(this.state.activeSlide + 1)
+      }, this.props.delay)
+    }
   }
 
   render() {
@@ -100,9 +124,17 @@ class Carousel extends React.Component {
             />
           ))}
         </DotsWrapper>
+
+        <h1
+          onClick={() => {this.props.onSwitchOffCarousel, console.log(this.props.allow)}}
+        >click</h1>
       </Wrapper>
     )
   }
+}
+
+Carousel.propTypes = {
+  allow: PropTypes.bool.isRequired
 }
 
 export default Carousel
