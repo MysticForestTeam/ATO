@@ -2,7 +2,7 @@ import posed from 'react-pose'
 import styled from 'styled-components'
 
 export const Wrapper = styled.div`
-  background-color: #F4F4F4;
+  background-color: #f4f4f4;
   width: 100%;
   height: 100%;
   display: flex;
@@ -11,6 +11,7 @@ export const Wrapper = styled.div`
   align-items: center;
   padding: 0;
   margin: 0;
+  padding-bottom: 40px;
 `
 
 export const Header = styled.div`
@@ -27,7 +28,7 @@ export const Header = styled.div`
 `
 
 export const Stick = styled.div`
-  background-color: #BDA064;
+  background-color: #bda064;
   width: 34px;
   height: 4px;
   margin-top: 30px;
@@ -57,7 +58,7 @@ const NewsCardPosed = posed.div({
     scale: 1,
     translateZ: 0,
     transition: {
-      duration: 600,
+      duration: 600
     }
   },
   hover: {
@@ -93,11 +94,11 @@ export const CardDescription = styled.div`
 `
 
 export const CardText = styled.div`
-  color: ${props => props.primary ? '#000000' : '#949695'};
-  font-size: ${props => props.primary ? '16px' : '13px'};
+  color: ${props => (props.primary ? '#000000' : '#949695')};
+  font-size: ${props => (props.primary ? '16px' : '13px')};
   font-family: 'Roboto', sans-serif;
   text-align: center;
   max-width: 250px;
-  margin-bottom: ${props => props.primary ? '20px' : '0px'};
+  margin-bottom: ${props => (props.primary ? '20px' : '0px')};
   transform: translateZ(0);
 `
