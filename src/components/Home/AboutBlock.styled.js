@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const About = styled.div`
   width: 100vw;
@@ -21,6 +21,7 @@ export const About = styled.div`
   button {
     width: 100px;
     height: 30px;
+    padding: 0;
     border-radius: 4px;
     background: #bf9f62;
     color: #ffffff;
@@ -31,4 +32,4 @@ export const About = styled.div`
     font-weight: 300;
     font-size: 0.8em;
   }
-`
+`;
