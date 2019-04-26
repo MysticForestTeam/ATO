@@ -40,6 +40,7 @@
     "axios": "^0.18.0",
     "fs": "0.0.1-security",
     "fullpage.js": "^3.0.4",
+    "immutable": "^4.0.0-rc.12",
     "jquery": "^3.4.0",
     "jquery-scrollify": "^1.0.19",
     "jquery-ui": "^1.12.1",
