@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 import { Wrapper, Image } from './Images.styled';
 import { Container } from '../../modules/content/Content.styled';

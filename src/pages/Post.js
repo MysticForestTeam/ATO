@@ -14,7 +14,6 @@ class Post extends Component {
   render() {
     return (
       <>
-        <Header />
         <Content
           images={['../src/img/header.png']}
           title='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nec lacus
