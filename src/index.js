@@ -9,11 +9,8 @@ import rootReducer from './store/reducers'
 
 const store = createStore(rootReducer)
 
-console.log(store.getState())
-
 render(
     <Provider store={store}>
-        {console.log(store)}
         <App />
     </Provider>, 
     document.getElementById('root')

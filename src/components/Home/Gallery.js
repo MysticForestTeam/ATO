@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Carousel from '../../containers/Home/Carousel'
+import Carousel from './Carousel'
 
 import Button from '../../modules/primary-button/Button'
 

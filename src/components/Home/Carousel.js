@@ -1,6 +1,5 @@
 import React from 'react'
 import { Map, List } from 'immutable'
-import PropTypes from 'prop-types'
 
 import {
   Wrapper,
@@ -21,6 +20,7 @@ class Carousel extends React.Component {
       activeSlide: 0,
       animates: false,
       url: '',
+      allowAnimation: true
     }
 
     this.moveImages = this.moveImages.bind(this)
@@ -29,14 +29,12 @@ class Carousel extends React.Component {
   }
 
   getUrl = () => {
-    let url = window.location.pathname
-    this.setState({url: window.location.pathname})
   }
 
   componentWillMount() {
     this.getUrl()
     window.setTimeout(() => {
-      if (this.state.url === this.props.workedLink) {
+      if (window.location.pathname === this.props.workedLink) {
         this.setState({ images: [...this.props.images, this.props.images[0]] })
         this.setState({
           activeDots: List.of(
@@ -51,10 +49,8 @@ class Carousel extends React.Component {
   }
     
   componentDidMount() {
-    console.log(this.state.url)
-    this.getUrl()
     window.setTimeout(() => {
-      if (this.state.url === this.props.workedLink) {
+      if (window.location.pathname === this.props.workedLink) {
         this.autoToggle()
       }
     }, 50)
@@ -90,14 +86,12 @@ class Carousel extends React.Component {
 
   autoToggle = () => {
     this.moveImages(this.state.activeSlide + 1)
-
-    console.log(this.props.allow)
-
-    if (this.props.allow) {
-      window.setTimeout(() => {
+    
+    window.setTimeout(() => {
+      if (window.location.pathname === this.props.workedLink) {
         this.autoToggle(this.state.activeSlide + 1)
-      }, this.props.delay)
-    }
+      }
+    }, this.props.delay)
   }
 
   render() {
@@ -124,17 +118,9 @@ class Carousel extends React.Component {
             />
           ))}
         </DotsWrapper>
-
-        <h1
-          onClick={() => {this.props.onSwitchOffCarousel, console.log(this.props.allow)}}
-        >click</h1>
       </Wrapper>
     )
   }
-}
-
-Carousel.propTypes = {
-  allow: PropTypes.bool.isRequired
 }
 
 export default Carousel

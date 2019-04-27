@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter, HashRouter, Route, Switch } from 'react-router-dom';
-import Header from './containers/modules/Header';
+import Header from './modules/header/Header';
 
 import Home from './pages/Home';
 import News from './pages/News';
@@ -13,7 +13,7 @@ import './css/normalize.css';
 class App extends Component {
   render() {
     return (
-      <HashRouter>
+      <BrowserRouter>
         <Header />
         <Switch>
           <Route exact path='/' render={() => <Home />} />
@@ -22,7 +22,7 @@ class App extends Component {
           <Route path='/gallery' render={() => <Gallery />} />
           <Route path='/contacts' render={() => <Contacts />} />
         </Switch>
-      </HashRouter>
+      </BrowserRouter>
     );
   }
 }
