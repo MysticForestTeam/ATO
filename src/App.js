@@ -13,7 +13,7 @@ import './css/normalize.css';
 class App extends Component {
   render() {
     return (
-      <BrowserRouter>
+      <HashRouter>
         <Header />
         <Switch>
           <Route exact path='/' render={() => <Home />} />
@@ -22,7 +22,7 @@ class App extends Component {
           <Route path='/gallery' render={() => <Gallery />} />
           <Route path='/contacts' render={() => <Contacts />} />
         </Switch>
-      </BrowserRouter>
+      </HashRouter>
     );
   }
 }

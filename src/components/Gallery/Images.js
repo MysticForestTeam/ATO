@@ -3,15 +3,18 @@ import React from 'react';
 import { Wrapper, Image } from './Images.styled';
 import { Container } from '../../modules/content/Content.styled';
 
-const Images = () => (
+import ZoomImg from './ZoomImg'
+
+const Images = (props) => (
   <Container>
     <Wrapper>
-      <Image />
-      <Image />
-      <Image />
-      <Image />
-      <Image />
-      <Image />
+      {/* <ZoomImg src='../../img/ato1.jpg'/>
+      <ZoomImg src='../../img/ato2.jpg'/>
+      <ZoomImg src='../../img/ato3.jpg'/> */}
+
+      {props.images.map((image, index) => (
+        <ZoomImg src={image} key={index} />
+      ))}
     </Wrapper>
   </Container>
 );
