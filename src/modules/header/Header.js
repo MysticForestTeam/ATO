@@ -1,6 +1,5 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import PropTypes from 'prop-types'
 
 import {
   Head,
@@ -14,11 +13,7 @@ import {
   Link
 } from './Header.styled'
 
-const Header = (props) => {
-  const { onSwitchOnCarousel, onSwitchOffCarousel } = props
-
-  console.log(props)
-
+const Header = () => {
   return(
     <>
       <Head>
@@ -48,28 +43,20 @@ const Header = (props) => {
           <Link>Головна</Link>
         </NavLink>
         <NavLink
-          onClick={() => onSwitchOffCarousel()} 
           to='/news'>
           <Link>Новини</Link>
         </NavLink>
         <NavLink 
-          onClick={onSwitchOffCarousel} 
           to='/gallery'>
           <Link>Галерея</Link>
         </NavLink>
         <NavLink 
-          onClick={onSwitchOffCarousel} 
           to='/contacts'>
           <Link>Контакти</Link>
         </NavLink>
       </Nav>
     </>
   )
-}
-
-Header.propTypes = {
-  onSwitchOnCarousel: PropTypes.func.isRequired,
-  onSwitchOffCarousel: PropTypes.func.isRequired
 }
 
 export default Header
