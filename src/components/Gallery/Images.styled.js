@@ -12,7 +12,21 @@ export const Wrapper = styled.div`
 export const Image = styled.div`
   width: calc(33.3% - 10px);
   padding-top: 22.2%;
-  background: #eeeeee url('../../img/header.png') center center;
-  background-size: cover;
+  position: relative;
+  cursor: pointer;
   margin: 5px;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    transition: all 0.4s ease-out;
+  }
+
+  &:hover > img {
+    transform: scale(1.05);
+  }
 `;

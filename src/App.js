@@ -18,7 +18,11 @@ class App extends Component {
         <Switch>
           <Route exact path='/' render={() => <Home />} />
           <Route exact path='/news' render={props => <News {...props} />} />
-          <Route exact path='/news/:id' render={() => <Post />} />
+          <Route
+            exact
+            path='/news/:id'
+            render={params => <Post {...params} />}
+          />
           <Route path='/gallery' render={() => <Gallery />} />
           <Route path='/contacts' render={() => <Contacts />} />
         </Switch>

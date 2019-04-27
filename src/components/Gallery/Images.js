@@ -1,19 +1,31 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 import { Wrapper, Image } from './Images.styled';
 import { Container } from '../../modules/content/Content.styled';
 
-const Images = () => (
-  <Container>
-    <Wrapper>
-      <Image />
-      <Image />
-      <Image />
-      <Image />
-      <Image />
-      <Image />
-    </Wrapper>
-  </Container>
-);
+class Images extends Component {
+  render() {
+    return (
+      <>
+        <Container>
+          <Wrapper>
+            <Image onClick={() => this.openViewer('../../img/header.png')}>
+              <img src='../../img/header.png' />
+            </Image>
+            <Image>
+              <img src='../../img/header.png' />
+            </Image>
+            <Image>
+              <img src='../../img/header.png' />
+            </Image>
+            <Image>
+              <img src='../../img/header.png' />
+            </Image>
+          </Wrapper>
+        </Container>
+      </>
+    );
+  }
+}
 
 export default Images;
