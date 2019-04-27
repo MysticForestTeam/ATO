@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { Container, News } from './Blog.styled';
+import { News } from './Blog.styled';
+import { Container } from '../../modules/content/Content.styled';
 import Item from './Item';
 
 const Blog = props => (

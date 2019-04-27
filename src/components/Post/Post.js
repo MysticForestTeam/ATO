@@ -1,7 +1,8 @@
 import React from 'react';
 import moment from 'moment';
 
-import { Container, Wrapper, Info, Image, Title, Text } from './Post.styled';
+import { Wrapper, Info, Image, Title, Text } from './Post.styled';
+import { Container } from '../../modules/content/Content.styled';
 
 const Post = props => (
   <Container>

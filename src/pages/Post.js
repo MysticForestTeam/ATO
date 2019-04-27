@@ -8,7 +8,7 @@ class Post extends Component {
     const {
       match: { params }
     } = this.props;
-    console.log(params.id); // Api req for post with same id
+    // Api req for post with same id
   }
 
   render() {
