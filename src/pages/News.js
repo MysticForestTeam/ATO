@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import Header from '../modules/header/Header';
+import Header from '../containers/modules/Header';
 import Blog from '../components/News/Blog';
 
 class News extends Component {
