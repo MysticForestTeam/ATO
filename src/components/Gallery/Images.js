@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { Wrapper, Image } from './Images.styled';
 import { Container } from '../../modules/content/Content.styled';
 
-import ZoomImg from './ZoomImg'
+import ZoomImg from '../../modules/zoom-img/ZoomImg'
 
 const Images = (props) => (
   <Container>
@@ -13,7 +13,11 @@ const Images = (props) => (
       <ZoomImg src='../../img/ato3.jpg'/> */}
 
       {props.images.map((image, index) => (
-        <ZoomImg src={image} key={index} />
+        <ZoomImg 
+          src={image} 
+          key={index} 
+          useScale
+        />
       ))}
     </Wrapper>
   </Container>
