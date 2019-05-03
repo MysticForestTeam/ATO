@@ -4,9 +4,9 @@
   "description": "WebPack set up",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
-    "dev": "webpack-dev-server --open"
+    "dev": "webpack-dev-server --open",
+    "test": "webpack-dev-server --port 3000 --hot --host 0.0.0.0"
   },
   "author": "Anusip",
   "license": "ISC",
