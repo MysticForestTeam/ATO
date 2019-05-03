@@ -24,6 +24,7 @@ export const ContentWrapper = styled.div`
   @media(max-width: 1100px) {
     height: 1200px;
     width: 100%;
+    max-width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -34,6 +35,10 @@ export const ContentWrapper = styled.div`
 export const CarouselBlock = styled.div`
   width: 50%;
   height: 403px;
+
+  @media(max-width: 1100px) {
+    width: 484px;
+  }
 `
 
 export const Header = styled.h1`
@@ -59,4 +64,8 @@ export const Image = styled.div`
   background: #f4f4f4 url(${props => props.src}) center center;
   width: 50%;
   height: 403px;
+  @media(max-width: 1100px) {
+    width: calc(100% - 20px);
+    ${'' /* margin: 0 10px 0 10px; */}
+  }
 `

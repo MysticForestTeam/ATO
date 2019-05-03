@@ -8,10 +8,6 @@ import ZoomImg from '../../modules/zoom-img/ZoomImg'
 const Images = (props) => (
   <Container>
     <Wrapper>
-      {/* <ZoomImg src='../../img/ato1.jpg'/>
-      <ZoomImg src='../../img/ato2.jpg'/>
-      <ZoomImg src='../../img/ato3.jpg'/> */}
-
       {props.images.map((image, index) => (
         <ZoomImg 
           src={image} 
