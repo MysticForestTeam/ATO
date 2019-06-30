@@ -7,10 +7,8 @@ import { Container } from '../../modules/content/Content.styled';
 const Post = props => (
   <Container>
     <Wrapper>
-      <Image src={props.images[0]} />
+      <Image src={props.images} />
       <Title>{props.title}</Title>
-      <Text>{props.text}</Text>
-      <Text>{props.text}</Text>
       <Text>{props.text}</Text>
       <Info>
         <div>

@@ -1,36 +1,73 @@
 import React, { Component } from 'react';
+import axios from 'axios'
 
 import Header from '../modules/header/Header';
 import Content from '../components/Post/Post';
+import { assertExportSpecifier } from 'babel-types';
 
 class Post extends Component {
+  constructor(props) {
+    super(props)
+    
+    this.state = {
+      data: [],
+      id: 0
+    }
+  }
+
   componentDidMount() {
     const {
       match: { params }
     } = this.props;
     // Api req for post with same id
+
+    this.getData()
+  }
+
+  getNewsId() {
+    let url = window.location.hash
+
+    url = url.split('').reverse().join('')
+    url = url.slice(0, url.indexOf('/'))
+    url = url.split('').reverse().join('')
+    
+    return url;
+  }
+
+  getData = () => {
+    const sendRequest = async () => {
+      try {
+        return await axios.get('http://qwerty32.herokuapp.com/news/' + this.getNewsId())
+      }
+      catch (error) {
+        console.log(error)
+      }
+    }
+
+    const getResponse = () => {
+      const res = sendRequest()
+      .then(response => {
+        this.setState({
+          data: response.data
+        })
+      })
+      .catch(error => {
+        console.log(error)
+      })
+    }
+
+    getResponse()
   }
 
   render() {
     return (
-      <>
-        <Content
-          images={['../src/img/header.png']}
-          title='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nec lacus
-          placerat, accumsan justo quis, ultrices nibh. Nullam hendrerit tortor.'
-          text={`Lorem Ipsum - це текст-"риба", що використовується в друкарстві та
-        дизайні. Lorem Ipsum є, фактично, стандартною "рибою" аж з XVI сторіччя,
-        коли невідомий друкар взяв шрифтову гранку та склав на ній підбірку
-        зразків шрифтів. "Риба" не тільки успішно пережила п'ять століть, але й
-        прижилася в електронному верстуванні, залишаючись по суті незмінною.
-        Вона популяризувалась в 60-их роках минулого сторіччя завдяки виданню
-        зразків шрифтів Letraset, які містили уривки з Lorem Ipsum, і вдруге -
-        нещодавно завдяки програмам комп'ютерного верстування на кшталт Aldus
-        Pagemaker, які використовували різні версії Lorem Ipsum.`}
-          author='Rainchuk Vitaliy'
-          date={Date.now()}
-        />
-      </>
+      <Content
+        images={this.state.data.image}
+        title={this.state.data.title}
+        text={this.state.data.text}
+        author={this.state.data.author}
+        date={this.state.data.updated_at}
+      /> 
     );
   }
 }

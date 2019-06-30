@@ -1,30 +1,32 @@
 import React from 'react';
 import LinesEllipsis from 'react-lines-ellipsis';
+import { NavLink } from 'react-router-dom'
 import moment from 'moment';
 
 import { Ratio, Wrapper, Image, Text, Info } from './Item.styled';
 
 const Item = props => (
   <Ratio>
-    <Wrapper onClick={() => props.history.push(`/news/${props.id}`)}>
-      <Image>
-        <img src='../../img/header.png' alt='' />
-      </Image>
-      <Text>
-        <LinesEllipsis
-          text='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nec lacus
-          placerat, accumsan justo quis, ultrices nibh. Nullam hendrerit tortor.'
-          maxLine='3'
-          ellipsis='...'
-          trimRight
-          basedOn='letters'
-        />
-        <Info>
-          <img src='../../img/calendar.svg' height='13px' />
-          <p>{moment().format('DD.MM.YYYY')}</p>
-        </Info>
-      </Text>
-    </Wrapper>
+    <NavLink to={'/news/' + props.id}>
+      <Wrapper>
+        <Image>
+          <img src={props.image} alt='' />
+        </Image>
+        <Text>
+          <LinesEllipsis
+            text={props.text}
+            maxLine='3'
+            ellipsis='...'
+            trimRight
+            basedOn='letters'
+          />
+          <Info>
+            <img src='../../img/calendar.svg' height='13px' />
+            <p>{props.updated_at}</p>
+          </Info>
+        </Text>
+      </Wrapper>
+    </NavLink>
   </Ratio>
 );
 
